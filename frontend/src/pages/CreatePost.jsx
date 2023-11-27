@@ -116,7 +116,7 @@ const CreatePost = () => {
         </div>
         <textarea
           onChange={(e) => setDesc(e.target.value)}
-          cols={30}
+          cols={15}
           rows={15}
           className="px-4 py-2 outline-none border border-gray-600"
           placeholder="Enter post Descriptions"

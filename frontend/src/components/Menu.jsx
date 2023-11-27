@@ -19,7 +19,7 @@ const Menu = () => {
     }
   };
   return (
-    <div className="bg-black w-[200px] flex flex-col items-start absolute top-12 right-6 cursor-pointer md:right-36 rounded-md p-4 space-y-4 ">
+    <div className="bg-black z-10 w-[200px] flex flex-col items-start absolute top-12 right-6 cursor-pointer md:right-36 rounded-md p-4 space-y-4 ">
       {!user && (
         <h3 className="text-white text-sm hover:text-gray-500">
           <Link to={"/login"}>Login</Link>{" "}
@@ -31,7 +31,9 @@ const Menu = () => {
         </h3>
       )}
       {user && (
-        <h3 className="text-white text-sm hover:text-gray-500">Profile</h3>
+        <h3 className="text-white text-sm hover:text-gray-500">
+          <Link to={"/profile/" + user._id}>Profile</Link>
+        </h3>
       )}
       {user && (
         <h3 className="text-white text-sm hover:text-gray-500">
@@ -39,7 +41,9 @@ const Menu = () => {
         </h3>
       )}
       {user && (
-        <h3 className="text-white text-sm hover:text-gray-500">My Blogs</h3>
+        <h3 className="text-white text-sm hover:text-gray-500">
+          My <Link to={"/myblogs/" + user._id}>My blogs</Link>
+        </h3>
       )}
       {user && (
         <h3
